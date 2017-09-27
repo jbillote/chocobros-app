@@ -1,6 +1,7 @@
 package com.jbillote.chocobros.fflogs.model;
 
-import java.util.ArrayList;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 /**
@@ -8,22 +9,31 @@ import java.util.List;
  */
 
 public class Zone {
+
+    @SerializedName("id")
     private int id;
+
+    @SerializedName("name")
     private String name;
+
+    @SerializedName("frozen")
     private boolean frozen;
+
+    @SerializedName("encounters")
     private List<Encounter> encounters;
+
+    @SerializedName("brackets")
     private List<Bracket> brackets;
 
-    public Zone(int id, String name, boolean frozen, List<Encounter> encounters,
-                List<Bracket> brackets) {
+    public Zone(int id, String name, boolean frozen, List<Encounter> encounters, List<Bracket> brackets) {
         this.id = id;
         this.name = name;
         this.frozen = frozen;
-        this.encounters = new ArrayList<>(encounters);
-        this.brackets = new ArrayList<>(brackets);
+        this.encounters = encounters;
+        this.brackets = brackets;
     }
 
-    public int getID() {
+    public int getId() {
         return this.id;
     }
 
@@ -31,7 +41,7 @@ public class Zone {
         return this.name;
     }
 
-    public boolean getFrozen() {
+    public boolean isFrozen() {
         return this.frozen;
     }
 
@@ -43,7 +53,7 @@ public class Zone {
         return this.brackets;
     }
 
-    public void setID(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -56,10 +66,10 @@ public class Zone {
     }
 
     public void setEncounters(List<Encounter> encounters) {
-        this.encounters = new ArrayList<>(encounters);
+        this.encounters = encounters;
     }
 
     public void setBrackets(List<Bracket> brackets) {
-        this.brackets = new ArrayList<>(brackets);
+        this.brackets = brackets;
     }
 }

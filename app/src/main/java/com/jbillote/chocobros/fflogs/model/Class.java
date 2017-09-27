@@ -1,6 +1,7 @@
 package com.jbillote.chocobros.fflogs.model;
 
-import java.util.ArrayList;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 /**
@@ -8,17 +9,23 @@ import java.util.List;
  */
 
 public class Class {
+
+    @SerializedName("id")
     private int id;
+
+    @SerializedName("name")
     private String name;
+
+    @SerializedName("specs")
     private List<Spec> specs;
 
     public Class(int id, String name, List<Spec> specs) {
         this.id = id;
         this.name = name;
-        this.specs = new ArrayList<>(specs);
+        this.specs = specs;
     }
 
-    public int getID() {
+    public int getId() {
         return this.id;
     }
 
@@ -30,7 +37,7 @@ public class Class {
         return this.specs;
     }
 
-    public void setID(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -39,6 +46,6 @@ public class Class {
     }
 
     public void setSpecs(List<Spec> specs) {
-        this.specs = new ArrayList<>(specs);
+        this.specs = specs;
     }
 }

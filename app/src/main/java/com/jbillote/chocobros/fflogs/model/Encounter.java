@@ -1,11 +1,17 @@
 package com.jbillote.chocobros.fflogs.model;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by Jeremy Billote on 9/20/17.
  */
 
 public class Encounter {
+
+    @SerializedName("id")
     private int id;
+
+    @SerializedName("name")
     private String name;
 
     public Encounter(int id, String name) {
@@ -13,7 +19,7 @@ public class Encounter {
         this.name = name;
     }
 
-    public int getID() {
+    public int getId() {
         return this.id;
     }
 
@@ -21,7 +27,7 @@ public class Encounter {
         return this.name;
     }
 
-    public void setID(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
