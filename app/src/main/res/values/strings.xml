@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">Chocobros</string>
+    <string name="title_activity_navigation_drawer">NavigationDrawerActivity</string>
+
+    <string-array name="regions">
+        <item>NA</item>
+        <item>EU</item>
+        <item>JP</item>
+    </string-array>
+
+    <string name="character_name">Character Name</string>
+    <string name="guild_name">Guild</string>
+    <string name="server">Server</string>
+
+    <string name="search">Search</string>
+    <string name="search_in_progress">Searching&#8230;</string>
+
+    <string name="character_search_title">Search for a character</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>
