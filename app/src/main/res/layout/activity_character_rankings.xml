@@ -6,4 +6,24 @@
     android:layout_height="match_parent"
     tools:context="com.jbillote.chocobros.activity.CharacterRankingsActivity">
 
+    <TextView
+        android:id="@+id/character_ranking_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:paddingTop="15dp"
+        android:paddingStart="15dp"
+        android:paddingBottom="15dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:text="Rankings for Touka Tsuwamono on Faerie (NA)" />
+
+    <ListView
+        android:id="@+id/character_ranking_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/character_ranking_title"/>
+
 </android.support.constraint.ConstraintLayout>
