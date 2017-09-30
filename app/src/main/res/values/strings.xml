@@ -17,6 +17,16 @@
 
     <string name="character_search_title">Search for a character</string>
 
+    <string name="nav_menu_ranking">Ranking</string>
+    <string name="nav_menu_ranking_character">Character</string>
+    <string name="nav_menu_ranking_encounter">Encounter</string>
+
+    <string name="nav_menu_parses">Parses</string>
+    <string name="nav_menu_parses_character">Character</string>
+
+    <string name="nav_menu_reports">Reports</string>
+    <string name="nav_menu_reports_guild">Guild</string>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
