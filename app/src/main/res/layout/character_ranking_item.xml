@@ -1,5 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="15dp" >
 
+    <TextView
+        android:id="@+id/char_ranking_item_encounter_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:text="Encounter Name"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/char_ranking_item_class"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/char_ranking_item_encounter_name"
+        android:layout_alignStart="@+id/char_ranking_item_encounter_name"
+        android:text="Class" />
+
+    <TextView
+        android:id="@+id/char_ranking_item_percentile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/char_ranking_item_class"
+        android:layout_alignStart="@+id/char_ranking_item_class"
+        android:text="Percentile" />
+
+    <TextView
+        android:id="@+id/char_ranking_item_dps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/char_ranking_item_percentile"
+        android:layout_alignStart="@+id/char_ranking_item_percentile"
+        android:text="DPS"/>
 </RelativeLayout>
