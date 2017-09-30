@@ -31,9 +31,9 @@ public class CharacterRankingsActivity extends NavigationDrawerActivity {
         stub.setLayoutResource(R.layout.activity_character_rankings);
         stub.inflate();
 
-        String characterName = getIntent().getStringExtra(CharacterSearchActivity.EXTRA_CHARACTER_NAME);
-        String server = getIntent().getStringExtra(CharacterSearchActivity.EXTRA_CHARACTER_SERVER);
-        String region = getIntent().getStringExtra(CharacterSearchActivity.EXTRA_CHARACTER_REGION);
+        String characterName = getIntent().getStringExtra(CharacterRankingSearchActivity.EXTRA_CHARACTER_NAME);
+        String server = getIntent().getStringExtra(CharacterRankingSearchActivity.EXTRA_CHARACTER_SERVER);
+        String region = getIntent().getStringExtra(CharacterRankingSearchActivity.EXTRA_CHARACTER_REGION);
 
         String[] splitName = characterName.split(" ");
         for (int i = 0; i < splitName.length; i++) {
@@ -50,7 +50,7 @@ public class CharacterRankingsActivity extends NavigationDrawerActivity {
 
         Gson gson = new Gson();
         Type classType = new TypeToken<ArrayList<CharacterRanking>>(){}.getType();
-        List<CharacterRanking> rankings = gson.fromJson(getIntent().getStringExtra(CharacterSearchActivity.EXTRA_RANKINGS), classType);
+        List<CharacterRanking> rankings = gson.fromJson(getIntent().getStringExtra(CharacterRankingSearchActivity.EXTRA_RANKINGS), classType);
 
         ((TextView)findViewById(R.id.character_ranking_title)).setText(title);
         ((ListView)findViewById(R.id.character_ranking_list)).setAdapter(new CharacterRankingAdapter(rankings));

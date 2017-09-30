@@ -15,7 +15,10 @@
     <string name="search">Search</string>
     <string name="search_in_progress">Searching&#8230;</string>
 
-    <string name="character_search_title">Search for a character</string>
+    <string name="character_ranking_search_title">Search for a character\'s rankings</string>
+    <string name="encounter_ranking_search_title">Search for rankings by encounter</string>
+    <string name="character_parse_search_title">Search for a character\'s parses</string>
+    <string name="guild_report_search_title">Search for a guild\'s reports</string>
 
     <string name="nav_menu_ranking">Ranking</string>
     <string name="nav_menu_ranking_character">Character</string>

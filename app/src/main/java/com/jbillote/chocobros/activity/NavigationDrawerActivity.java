@@ -2,6 +2,7 @@ package com.jbillote.chocobros.activity;
 
 import com.jbillote.chocobros.R;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -65,11 +66,31 @@ public class NavigationDrawerActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+
+        Intent intent = null;
+
+        switch (id) {
+            case R.id.nav_ranking_char:
+                intent = new Intent(this, CharacterRankingSearchActivity.class);
+                break;
+            case R.id.nav_ranking_encounter:
+                intent = new Intent(this, EncounterRankingSearchActivity.class);
+                break;
+            case R.id.nav_parses_character:
+                intent = new Intent(this, CharacterParseSearchActivity.class);
+                break;
+            case R.id.nav_reports_guild:
+                intent = new Intent(this, GuildReportSearchActivity.class);
+                break;
+        }
+
+        if (intent != null) {
+            startActivity(intent);
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

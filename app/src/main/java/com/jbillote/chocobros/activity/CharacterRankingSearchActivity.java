@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 
-public class CharacterSearchActivity extends NavigationDrawerActivity {
+public class CharacterRankingSearchActivity extends NavigationDrawerActivity {
 
     public static String EXTRA_RANKINGS = "com.jbillote_chocobros.activity.CHARACTER_RANKINGS";
     public static String EXTRA_CHARACTER_NAME = "com.jbillote.chocobros.activity.CHARACTER_NAME";
@@ -31,12 +31,12 @@ public class CharacterSearchActivity extends NavigationDrawerActivity {
         super.onCreate(savedInstanceState);
 
         ViewStub stub = (ViewStub)findViewById(R.id.main_layout_stub);
-        stub.setLayoutResource(R.layout.activity_character_search);
+        stub.setLayoutResource(R.layout.activity_character_ranking_search);
         stub.inflate();
     }
 
     public void searchPressed(View view) {
-        this.progressDialog = new ProgressDialog(CharacterSearchActivity.this);
+        this.progressDialog = new ProgressDialog(CharacterRankingSearchActivity.this);
         this.progressDialog.setMessage(getApplicationContext().getString(R.string.search_in_progress));
         this.progressDialog.setIndeterminate(true);
         this.progressDialog.setCancelable(true);
