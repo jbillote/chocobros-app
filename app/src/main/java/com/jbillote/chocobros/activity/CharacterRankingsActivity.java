@@ -6,7 +6,11 @@ import com.jbillote.chocobros.fflogs.util.ClassUtil;
 import com.jbillote.chocobros.fflogs.util.EncounterUtil;
 
 import android.os.Bundle;
+import android.support.v4.view.GestureDetectorCompat;
+import android.util.Log;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
@@ -22,6 +26,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CharacterRankingsActivity extends NavigationDrawerActivity {
+
+    private GestureDetectorCompat mDetector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +60,31 @@ public class CharacterRankingsActivity extends NavigationDrawerActivity {
 
         ((TextView)findViewById(R.id.character_ranking_title)).setText(title);
         ((ListView)findViewById(R.id.character_ranking_list)).setAdapter(new CharacterRankingAdapter(rankings));
+
+        this.mDetector = new GestureDetectorCompat(this, new FlingDetector());
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent e) {
+        this.mDetector.onTouchEvent(e);
+        return super.dispatchTouchEvent(e);
+    }
+
+    private class FlingDetector extends GestureDetector.SimpleOnGestureListener {
+
+        private final float SWIPE_THRESHOLD = 200;
+        private final float VELOCITY_THRESHOLD = 100;
+
+        @Override
+        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+            float dx = e2.getX() - e1.getX();
+
+            if (dx > SWIPE_THRESHOLD && velocityX > VELOCITY_THRESHOLD) {
+                finish();
+            }
+
+            return true;
+        }
     }
 
     private class CharacterRankingAdapter extends ArrayAdapter<CharacterRanking> {
@@ -78,7 +109,7 @@ public class CharacterRankingsActivity extends NavigationDrawerActivity {
                 ((TextView)convertView.findViewById(R.id.char_ranking_item_percentile)).setText(String.valueOf(percentile) + "th Percentile");
                 ((TextView)convertView.findViewById(R.id.char_ranking_item_dps)).setText(String.valueOf(ranking.getTotal()));
             } catch (Exception e) {
-                e.printStackTrace();;
+                e.printStackTrace();
             }
 
             return convertView;
